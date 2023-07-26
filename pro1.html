@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HOME</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+        .register{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+         }
+         .main{
+            border:2px solid black;
+            border-radius:8px;
+            height:400px;
+            width:450px;
+            padding:8px;
+            margin-top:25px;
+            margin-left:550px;
+            color:black;
+            box-shadow: 10px 10px 10px gray;
+     
+         }
+         
+         #label{
+            font-family: bold;
+            margin-bottom: 10px;
+         }
+         label{
+            margin-bottom: 6px;
+         }
+         input:hover{
+                    box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.536);
+         }
+         #box1{
+            margin-top:6px;
+         }
+       
+       
+         #make{
+            display:flex;
+        }
+       </style>
+        <script type="text/javascript">
+                 
+         function selectChoice()
+         {
+                var selectedNum = document.querySelector('input[name="num"]:checked');
+                var selectedColor = document.querySelector('input[name="favcolor"]:checked');
+                var selectedFruit = document.querySelector('input[name="favfruit"]:checked');
+
+                if (selectedNum && selectedColor && selectedFruit)
+                {
+                var numValue = selectedNum.value;
+                var colorValue = selectedColor.value;
+                var fruitValue = selectedFruit.value;
+
+                if (numValue === "5" && colorValue === "Yellow" && fruitValue === "Mango")
+                 {
+                    sessionStorage.setItem("name", " Rohit sharma");
+                }
+                else if (numValue === "3" && colorValue === "Red" && fruitValue === "Apple")
+                 {
+                    sessionStorage.setItem("name", " virat kohli");
+                }
+                else if (numValue === "9" && colorValue === "Voilet" && fruitValue === "BlueBerry")
+                 {
+                    sessionStorage.setItem("name", " M.S Dhoni");
+                }
+                else
+                {
+                    sessionStorage.setItem("name", "Sorry!! You did not choose the right choice.");
+
+                }
+                window.location.href = "pro.html";
+                }
+                else
+                 {
+                    alert("Please select an option from each group.");
+                }
+               
+
+        }
+
+
+             
+             
+     </script>
+    </head>
+    <body class="container-fluid">
+       
+        <section>
+           <div id="make">
+            <div class="register">
+                <div class="main">
+                    <form>
+                        <h2>Prediction Game!!</h2>
+   
+                        <div id="label">
+                            <label>pick your favt player bat</label>
+                        <div id="box">
+                            <input type="radio" name="num"  id="num1" value="5"> <img src="./images/rs1.jpg" height="50px" width="50px">
+                            <input type="radio" name="num" id="num2" value="3"> <img src="./images/v2.jpg" height="50px" width="50px">
+                            <input type="radio" name="num"  id="num3" value="9"> <img src="./images/ms1.jpg" height="50px" width="50px">
+                        </div>
+                        </div>
+                    <div id="label">
+                        <label>pick one related to your favt player</label>
+                        <div id="box">
+                            <input type="radio" name="favcolor" id="favcolor" value="Red"> <img src="./images/v1.jpg" height="50px" width="50px">
+                            <input type="radio" name="favcolor" id="favcolor" value="Yellow"> <img src="./images/rs3.jpg" height="50px" width="50px">
+                            <input type="radio" name="favcolor" id="favcolor" value="Voilet"> <img src="./images/ms2.jpg" height="50px" width="50px">
+                        </div>
+                    </div>
+                    <div id="label">
+                        <label>pick one thing which is related to your favt player</label>
+                        <div id="box">
+                            <input type="radio" name="favfruit" id="favfruit" value="BlueBerry"><img src="./images/ms3.jpg" height="50px" width="50px">
+                            <input type="radio" name="favfruit" id="favfruit" value="Apple"> <img src="./images/v3.jpg" height="50px" width="50px">
+                            <input type="radio" name="favfruit"  id="favfruit" value="Mango"> <img src="./images/rs2.jpg" height="50px" width="50px">
+                        </div>
+                    </div>
+                    <div id="label">
+                         <div id="box">
+                            <input type="button" name="submit" id="submit" value="Submit" onclick="selectChoice()">
+                         </div>
+                    </div>
+       
+                 </form>
+                 
+            </div>
+        </div>
+           </div>
+
+        </section>
+   </body>
+</html>
+
